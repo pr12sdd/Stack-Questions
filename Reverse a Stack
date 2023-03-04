@@ -1,0 +1,9 @@
+void Reverse(stack<int> &St){
+        if(St.empty())
+        {
+            return ;
+        }
+        cout<<St.top()<<" ";
+        St.pop();
+        Reverse(St);
+    }
