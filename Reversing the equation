@@ -1,0 +1,27 @@
+string reverseEqn (string s)
+        {   stack<string> m;
+            string g="";
+            int i=0;
+            string temp="";
+            while(i<s.size())
+            {   
+                while(i<s.size() && s[i]!='+' && s[i]!='*' && s[i]!='-' && s[i]!='/')
+            {
+                temp=temp+s[i];
+                i++;
+            }   
+            m.push(temp);
+            temp="";
+            if(i<s.size())
+            {string l="";
+            l=l+s[i];
+            m.push(l);
+            i++;   }
+        }
+            while(!m.empty())
+            {
+                g=g+m.top();
+                m.pop();
+            }
+            return g;
+        }
