@@ -1,0 +1,25 @@
+int removeConsecutiveSame(vector <string > v) 
+    {
+        stack<string> m;
+        string s="";
+        for(int i=0;i<v.size();i++)
+        {
+            if(!m.empty())
+            {
+                s=m.top();
+                if(s==v[i])
+                {
+                    m.pop();
+                }
+                else
+                {
+                    m.push(v[i]);
+                }
+            }
+            else
+            {
+                m.push(v[i]);
+            }
+        }
+        return m.size();
+    } 
