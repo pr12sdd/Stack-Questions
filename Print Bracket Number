@@ -1,0 +1,25 @@
+vector<int> barcketNumbers(string S)
+	{
+	      stack<int> m;
+	      vector<int> n;
+	      int count=0;
+	      for(int i=0;i<S.size();i++)
+	      {
+	          if(S[i]=='(')
+	          {
+	              count++;
+	              m.push(count);
+	              n.push_back(count);
+	          }
+	          else
+	          {
+	              if(!m.empty() && S[i]==')')
+	          {
+	              
+	              n.push_back(m.top());
+	              m.pop();
+	          }
+	          }
+	      }
+	      return n;
+	}
